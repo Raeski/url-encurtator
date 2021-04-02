@@ -1,0 +1,13 @@
+server:
+  error:
+    include-message: never
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/url?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: 99288723
+  jpa:
+    hibernate:
+      ddl-auto: update
+
