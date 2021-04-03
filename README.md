@@ -63,7 +63,7 @@ Tecnologias utilizadas:
    ```JS
    POST /url - para criar a url encurtada
    
-   GET /find/{códigoDaUrlEncurtada} - Retorna uma lista com todos os jogos
+   GET /find/{códigoDaUrlEncurtada} - Redireciona para o link da página vinculado com o código gerado na hora de enviar a URL
    
    GET /url/{id} - Redireciona para o link da página vinculado com o ID
    ```
