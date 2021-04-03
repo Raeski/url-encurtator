@@ -10,7 +10,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 @DataJpaTest
@@ -55,6 +57,30 @@ class UrlRepositoryTest {
 
         Assertions.assertThat(urlSaved.getNewUrl()).isEqualTo(urlToBeSaved.getNewUrl());
     }
+
+    @Test
+    @DisplayName("Find By New Url returns list of URL when successful")
+    void findByNewUrl_ReturnsListOfUrl_WhenSuccessful(){
+        Url urlToBeSaved = createUrl();
+
+        Url urlSaved = this.urlRepository.save(urlToBeSaved);
+
+        String url = urlSaved.getUrl();
+
+        List<Url> byUrl = this.urlRepository.findByNewUrl(url);
+
+        Assertions.assertThat(byUrl).isNotNull();
+    }
+
+    @Test
+    @DisplayName("Find By New Url returns empty list of URL when successful")
+    void findByNewUrl_ReturnsEmpty_WhenUrlIsNotFound(){
+        List<Url> byUrl = this.urlRepository.findByNewUrl("12");
+
+        Assertions.assertThat(byUrl).isEmpty();
+    }
+
+
 
 
     private Url createUrl() {
