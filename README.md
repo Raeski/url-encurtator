@@ -47,6 +47,8 @@ Tecnologias utilizadas:
    ```
 3. Abra o projeto em sua IDE de prefêrencia
 
+4. Configure o arquivo application.yml alterando o usuario e senha (Utilize o seu usuário e senha do Mysql), quando o projeto for executado ele se encarregará de criar a tabela e suas colunas no banco de dados
+
 5. Na IDE execute o arquivo UrlApplication
 
 6. No insomnia teste os endpoins no localhost:8080
@@ -61,7 +63,7 @@ Tecnologias utilizadas:
    ```JS
    POST /url - para criar a url encurtada
    
-   GET /find/{códigoDaUrlEncurtada} - Retorna uma lista com todos os jogos
+   GET /find/{códigoDaUrlEncurtada} - Redireciona para o link da página vinculado com o código gerado na hora de enviar a URL
    
    GET /url/{id} - Redireciona para o link da página vinculado com o ID
    ```
