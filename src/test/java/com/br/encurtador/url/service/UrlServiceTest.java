@@ -28,7 +28,6 @@ public class UrlServiceTest {
 
     @BeforeEach
     void setUp() {
-        Url url = new Url();
 
         BDDMockito.when(urlRepositoryMock.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.of(UrlCreator.createValidUrl()));

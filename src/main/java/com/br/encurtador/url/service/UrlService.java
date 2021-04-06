@@ -30,7 +30,7 @@ public class UrlService {
         String SALTCHARS = "abcdefghijklmnopqrstuvwxyz1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
-        while (salt.length() < 10 ) { // length of the random string.
+        while (salt.length() < 10 ) {
             int index = (int) (rnd.nextFloat() * SALTCHARS.length());
             salt.append(SALTCHARS.charAt(index));
         }
@@ -51,7 +51,6 @@ public class UrlService {
         } catch (Exception exception) {
             System.out.println(exception);
         }
-//        return urlRepository.save(UrlMapper.INSTANCE.toUrl(urlPostRequest));
             return urlRepository.save(urlPostRequest);
     }
 
